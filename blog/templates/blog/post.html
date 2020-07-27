@@ -1,0 +1,71 @@
+
+{% extends 'portfolio/base.html' %}
+
+
+{% block content %}
+<div class="m-links" id="links">
+    <a href="/" class="fa fa-home"> صفحه اصلی</a>
+    <a href="/about/" class="fa fa-info-circle"> درباره ما </a>
+    <a href="/blog/" id="m-active-page" class="fa fa-newspaper-o"> بلاگ</a>
+    <a href="/products/" class="fa fa-code"> محصولات</a>
+    <a href="/contact/" class="fa fa-envelope"> تماس با ما</a>
+</div>
+<nav class="mon" id="mon">
+    <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+    <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+    <div class="m-lang"><a href="/blog/en/{{post.id }}">en</a></div>
+</nav>
+
+<div class="els" onclick="closeNav()">
+    <nav class="mof">
+        <div class="navbar">
+            <h2><a href="/" class="logo">آوازه</a> </h2>
+            <div class="links">
+                <a href="/">صفحه اصلی</a>
+                <a href="/about/">درباره ما</a>
+                <a href="/blog/" id="m-active-page">بلاگ</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/">تماس با ما</a>
+            </div>
+        </div>
+        <div class="lang"><a href="/blog/en/{{post.id }}">en</a></div>
+    </nav>
+        <a href="/blog" class="btn-more">بازگشت</a>
+
+        <div class="blog-page">
+
+            <div class="bpt">
+                <div class="social-blog">
+                    <a class="fa fas fa-twitter" href=""></a>
+                    <a class="fa fas fa-whatsapp"></a>
+                    <i class="fa fas fa-telegram"></i>
+                    <i class="fa fas fa-instagram"></i>
+                    <i class="fa fas fa-share-alt"></i>
+
+                </div>
+
+                <div class="bpp-blog-page">
+                    <div class="bppr-blog-page">
+                        <h2>{{ post.title }}</h2>
+                        <p> {{ post.description|striptags }}</p>
+
+                    </div>
+                        <img src="{{ post.image.url }}" alt="">
+
+                </div>
+
+
+            </div>
+
+
+            <div class="bpb-blog-page">
+                <small>نویسنده : {{ post.author }}</small>
+                <small>2018/06/19</small>
+            </div>
+
+        </div>
+
+
+{% endblock %}

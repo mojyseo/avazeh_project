@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "portfolio/main.css" %}">
+</head>
+
+<body onload="showPage()">
+    <div class="loader" id="loader">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading</span>
+        </div>
+    </div>
+
+    <div class="" id="loaderoff">
+
+        <div class="fake-mon" onclick="closeNav()"></div>
+
+        {% block content%}
+
+
+        {% endblock  %}
+    </div>
+
+
+        <footer onclick="closeNav()">
+            <div class="footer">
+                <h2><a href="#/" class="m-logo" style="color: #fff;">Avazeh</a> </h2>
+                <div class="fss">
+                    <div class="fs">
+                        <p>Phone :
+                            <i style="display: block;" dir="ltr">+989117911780</i>
+                        </p>
+
+                    </div>
+                    <div class="fs">
+                        <p>Address :
+                        <address>Iran - Tehran - Velenjak - 28th street</address>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <small class="privacy" style="color: #fff; text-align: center;display: block;">All rights reserved by <b
+                    style="color: #6891ff;">Avazeh</b></small>
+
+        </footer>
+        <script src="{% static "portfolio/main.js" %}"></script>
+
+    </body>
+
+</html>

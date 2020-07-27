@@ -1,0 +1,57 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="m-links" id="links">
+    <a href="/" class="fa fa-home"> صفحه اصلی</a>
+    <a href="/about/" class="fa fa-info-circle"> درباره ما </a>
+    <a href="/blog/" class="fa fa-newspaper-o"> بلاگ</a>
+    <a href="/products/" class="fa fa-code"> محصولات</a>
+    <a href="/contact/" id="m-active-page" class="fa fa-envelope"> تماس با ما</a>
+</div>
+<nav class="mon" id="mon">
+    <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+    <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+    <div class="m-lang"><a href="/contact/en/">en</a></div>
+</nav>
+
+<div class="els" onclick="closeNav()">
+    <nav class="mof">
+        <div class="navbar">
+            <h2><a href="/" class="logo">آوازه</a> </h2>
+            <div class="links">
+                <a href="/">صفحه اصلی</a>
+                <a href="/about/">درباره ما</a>
+                <a href="/blog/">بلاگ</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/" id="m-active-page">تماس با ما</a>
+            </div>
+        </div>
+        <div class="lang"><a href="/contact/en/">en</a></div>
+    </nav>
+
+
+    <form action="msg-sent" class="contact-form" method="GET">
+        <h1>ارتباط با ما</h1>
+        <div class="form-sec">
+            <label for="name">نام و نام خانوادگی :</label>
+            <input type="text" name="name">
+        </div>
+        <div class="form-sec">
+            <label for="email">ایمیل :</label>
+            <input type="email" name="email">
+        </div>
+        <div class="form-sec">
+            <label for="phone">تلفن :</label>
+            <input type="number" name="phone">
+        </div>
+        <div class="form-sec">
+            <label for="desc">توضیحات :</label>
+            <textarea name="desc"  cols="30" rows="11"></textarea> </div>
+        <button type="submit"  class="btn-moreb" style="font-size: 20px;width: 120px; margin: 16px 0;cursor: pointer;">ارسال!</button>
+    </form>
+
+    {% endblock %}

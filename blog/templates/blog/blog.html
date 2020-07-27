@@ -1,0 +1,148 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="m-links" id="links">
+    <a href="/" class="fa fa-home"> صفحه اصلی</a>
+    <a href="/about/" class="fa fa-info-circle"> درباره ما </a>
+    <a href="/blog/" id="m-active-page" class="fa fa-newspaper-o"> بلاگ</a>
+    <a href="/products/" class="fa fa-code"> محصولات</a>
+    <a href="/contact/" class="fa fa-envelope"> تماس با ما</a>
+</div>
+<nav class="mon" id="mon">
+    <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+    <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+    <div class="m-lang"><a href="/blog/en/">en</a></div>
+</nav>
+
+<div class="els" onclick="closeNav()">
+    <nav class="mof">
+        <div class="navbar">
+            <h2><a href="/" class="logo">آوازه</a> </h2>
+            <div class="links">
+                <a href="/">صفحه اصلی</a>
+                <a href="/about/">درباره ما</a>
+                <a href="/blog/" id="m-active-page">بلاگ</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/">تماس با ما</a>
+            </div>
+        </div>
+        <div class="lang"><a href="/blog/en/">en</a></div>
+    </nav>
+
+
+    <div class="blog">
+        <aside>
+            <div class="aside-sec">
+                <div class="asp">
+                    <h4>جستجو :</h4>
+                </div>
+                <div class="asps" dir="ltr">
+                    <form class="search" action="/blog/search">
+                        <input type="text" name="search"><button type="submit" class="fa fa-search"></button>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="aside-sec">
+                <div class="asp">
+                    <h4>دسته ها :</h4>
+                </div>
+                <div class="asps">
+                    {% for c in categories %}
+                    <a href="/blog/categories/{{ c.link }}" class="sort-item">{{ c.category }}</a>
+
+
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+        </aside>
+        <div class="blog-posts">
+            {% comment %} <h3>{{ posts.count }} post{{ posts.count|pluralize }} has been added</h3> {% endcomment %}
+
+
+            {% for post in posts  %}
+
+            <div class="blog-card">
+
+                <div class="bpt">
+                    <div class="social-blog">
+                        <a target="_blank" href="https://twitter.com/home?status=http://127.0.0.1:8000/blog/8/ "><i
+                                class="fa fas fa-twitter"></i></a>
+                        <i class="fa fas fa-whatsapp"></i>
+                        <a class="fa fas fa-telegram"
+                            href="https://telegram.me/share/url?url=http://127.0.0.1:8000/blog/8/&text=text"></a>
+                        <i class="fa fas fa-instagram"></i>
+                        <i class="fa fas fa-share-alt"></i>
+
+                    </div>
+
+                    <div class="bpp">
+                        <div class="bppr">
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.description|striptags|truncatechars:300 }}</p>
+
+                        </div>
+                        <img src="{{ post.image.url }}" alt="">
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="bpb">
+                    <a href="{{ post.id }}/" target="_blank" class="btn-moreb">بیشتر بخوانید...</a>
+                    <div class="bpbi">
+                        <small>نویسنده : {{ post.author }}</small>
+                        <span dir="ltr">{{ post.date|date:'d M Y' }}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            {% endfor %}
+
+
+
+        </div>
+
+    </div>
+
+    <div class="pagination">
+
+        {% if posts.has_previous %}
+        <a href="?page={{ posts.previous_page_number }}" class="pn-word">قبلی</a>
+        {% else %}
+        <a class="pn-word-disable">قبلی</a>
+        {% endif %}
+
+
+        {% for num in posts.paginator.page_range %}
+        {% if posts.number == num %}
+        <a class="pn-num" id="active-pn">{{ num }}</a>
+        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+        <a href="?page={{ num }}" class="pn-num">{{ num }}</a>
+
+
+        {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}" class="pn-word">بعدی</a>
+        {% else %}
+        <a class="pn-word-disable">بعدی</a>
+
+        {% endif %}
+    </div>
+
+
+
+    {% endblock %}

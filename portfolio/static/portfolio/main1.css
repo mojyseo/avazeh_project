@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  color: #707070;
+  font-weight: bolder;
+}
+
+/* dfnnqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqnnnnn */
+.controll {
+  margin: 0px 16%;
+}
+.page {
+  padding: 30px 0;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+.header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar {
+  display: flex;
+  align-items: center;
+}
+.avatar p {
+  margin-left: 4px;
+}
+
+.lang {
+  cursor: pointer;
+  display: flex;
+  border-radius: 12px;
+  border: #707070 3px solid;
+}
+.lang a {
+  text-decoration: none;
+}
+
+.activel {
+  background-color: #6891ff;
+  border-radius: 8px;
+  padding: 4px 0;
+  width: 40px;
+}
+.activel a {
+  color: #ffffff;
+}
+.activel:hover {
+  transition: 0.5s;
+  background-color: #5b7ddb;
+}
+
+.deal {
+  padding: 4px 0;
+  width: 36px;
+}
+.deal:hover {
+  border-radius: 8px;
+  padding: 4px 0;
+  background-color: #e6e6e6c7;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 4%;
+  margin-top: 50px;
+  height: 100vh;
+  margin-top: 80px;
+}
+.navi {
+  transition: 0.2s ease-in-out;
+  margin-top: 100px;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+  color: #8f8f8f;
+  text-decoration: none;
+  border-bottom: 2px #8f8f8f solid;
+}
+.navi:hover {
+  text-shadow: -4px 8px 8px #7070704b;
+}
+
+.navrotate {
+  transition: 0.2s ease-in-out;
+  transform: rotate(90deg);
+}
+
+.sec1 {
+  text-align: center;
+  margin: auto;
+  margin-top: 34vh;
+  font-size: 30px;
+}
+
+/* page 2 : abilities */
+.abis {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 0;
+}
+.abistop {
+  display: flex;
+}
+.abi {
+  margin: 16px 26px;
+  padding: 20px 50px;
+  width: 40%;
+  -webkit-box-shadow: 0px 3px 32px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 32px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 32px -13px rgba(0, 0, 0, 0.75);
+}
+.abi ul {
+  list-style: none; /* Remove default bullets */
+  padding: 20px 0;
+}
+.abi li {
+  margin: 30px 2px;
+  width: auto;
+}
+.abi1 li {
+  width: 80px;
+  margin: 0;
+}
+
+.ab {
+  display: flex;
+  align-items: center;
+}
+.bulb {
+  color: #6891ff;
+  font-weight: bolder;
+  font-size: 40px;
+
+  vertical-align: middle;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 10px; /* Also needed for space (tweak if needed) */
+  margin-left: 12px; /* Also needed for space (tweak if needed) */
+}
+
+.buld {
+  color: #707070;
+  font-weight: bolder;
+  font-size: 40px;
+
+  vertical-align: middle;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 10px; /* Also needed for space (tweak if needed) */
+  margin-left: 12px; /* Also needed for space (tweak if needed) */
+}
+
+/* page3 */
+.page3 {
+  padding: 30px 0;
+  width: 100%;
+  height: 88vh;
+  scroll-snap-align: center;
+}
+.projcards {
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  margin: 12vh 0;
+}
+.projs {
+  text-align: center;
+}
+.projs a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #6891ff;
+  font-size: 18px;
+  padding: 6px 14px;
+  border-radius: 12px;
+}
+.card {
+  margin: 0 30px;
+
+  width: 250px;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 300px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.con {
+  padding: 25px 16px;
+}
+
+/* footer */
+footer {
+  height: 7vh;
+  text-align: center;
+  background-color: #6891ff;
+  color: #ffffff;
+  padding: 12px 16%;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+footer a {
+  border-radius: 12px;
+  text-decoration: none;
+  color: #6891ff;
+  background-color: #ffffff;
+  padding: 6px 14px;
+}
+.footerinfo {
+  color: #ffffff;
+  display: flex;
+}
+.footerinfo p {
+  padding: 0 14px;
+  color: #ffffff;
+}

@@ -1,0 +1,141 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="m-links" id="links">
+        <a href="/" id="m-active-page" class="fa fa-home"> صفحه اصلی</a>
+        <a href="/about/" class="fa fa-info-circle"> درباره ما </a>
+        <a href="/blog/" class="fa fa-newspaper-o"> بلاگ</a>
+        <a href="/products/"  class="fa fa-code"> محصولات</a>
+        <a href="/contact/" class="fa fa-envelope"> تماس با ما</a>
+    </div>
+    <nav class="mon" id="mon">
+        <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+        <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+        <div class="m-lang"><a href="/en/">en</a></div>
+    </nav>
+
+    <div class="els" onclick="closeNav()">
+        <nav class="mof">
+            <div class="navbar">
+                <h2><a href="/" class="logo">آوازه</a> </h2>
+                <div class="links">
+                    <a href="/" id="active-page">صفحه اصلی</a>
+                    <a href="/about/">درباره ما</a>
+                    <a href="/blog/">بلاگ</a>
+                    <a href="/products/">محصولات</a>
+                    <a href="/contact/">تماس با ما</a>
+                </div>
+            </div>
+            <div class="lang"><a href="/en/">en</a></div>
+        </nav>
+
+            <!-- slider -->
+            <div class="slideshow-container" id="sc">
+
+                <div class="mySlides fade">
+                    <img src={% static "portfolio/front-fa.png" %} style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src={% static "portfolio/back-fa.png" %} style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src={% static "portfolio/ui-fa.png" %} style="width:100%">
+                </div>
+
+            </div>
+
+
+            <div class="hidden" style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="desc-sec">
+                <div class="desc">
+                    <h2>گروه آوازه آماده خدمت رسانی</h2>
+                    <p>گروه آوازه متشکل از مهندسان, برنامه نویسان و طراحان جوان ایرانی از سال 1397 آماده به خدمت رسانی
+                        به
+                        شرکت
+                        ها, فروشگاه ها, کسب و کار ها و افراد در حوزه وب و نرم افزار در سطح جهانی می باشد . </p>
+
+
+                    <p>آوازه با تسلط بر بسیاری از تکنولوژی های روز دنیا در زمینه دیجیتال, به دنبال کسب رضایت شما عزیزان
+                        با
+                        رعایت
+                        اصولی ترین روش ها با در نظر گرفتن سلیقه مشتریان عزیز است .</p>
+                </div>
+            </div>
+            <div class="services">
+                <h2>در این قسمت میتوانید بخشی از خدمات آوازه را مشاهده نمایید : </h2>
+
+                <div class="servs">
+                    <div class="serv">
+                        <p>سمت وب (backend) : </p>
+                        <ul>
+                            <div class="serv-item">
+                                <li>Django (Python) </li>
+                                <a href="#" class="btn-more">بیشتر بخوانید...</a>
+                            </div>
+                            <div class="serv-item">
+                                <li>Node.js & Express (JavaScript)</li> <a href="#" class="btn-more">بیشتر
+                                    بخوانید...</a>
+
+                            </div>
+                            <div class="serv-item">
+                                <li>Laravel (PHP)</li> <a href="#" class="btn-more">بیشتر بخوانید...</a>
+
+                            </div>
+
+                        </ul>
+                    </div>
+                    <div class="serv">
+                        <p>سمت کاربر (frontend) : </p>
+                        <ul>
+                            <div class="serv-item">
+                                <li>Html, Css, JavaScript</li> <a href="#" class="btn-more">بیشتر بخوانید...</a>
+
+                            </div>
+                            <div class="serv-item">
+                                <li>React.js </li> <a href="#" class="btn-more">بیشتر بخوانید...</a>
+
+                            </div>
+                            <div class="serv-item">
+                                <li>Angular.js</li> <a href="#" class="btn-more">بیشتر بخوانید...</a>
+
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects">
+                <h2>تعدادی از پروژه های آوازه : </h2>
+                <div class="cards">
+                    {% for project in projects  %}
+                    <div class="card">
+                        <img width="360px" src="{{ project.image.url }}" alt="Avatar">
+
+                        <h3> {{ project.title }}
+                        </h3>
+                        <p> {{ project.description|striptags|truncatechars:100 }}
+                        </p>
+                        {% if project.link %}
+                        <a href="/products/{{ project.id }}" target="_blank" class="btn-morep">جزئیات بیشتر ...</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+                <a href="/products/" class="btn-all">مشاهده همه</a>
+            </div>
+                <a href="/contact/" class="fa fa-envelope btn-contact"> تماس با ما</a>
+
+            {% endblock %}

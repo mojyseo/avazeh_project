@@ -1,0 +1,58 @@
+{% extends 'portfolio/base-en.html' %}
+
+{% load static %}
+
+{% block content %}
+
+        <div class="m-links-en" id="links">
+            <a href="/en/" class="fa fa-home"> Home</a>
+            <a href="/about/en" class="fa fa-info-circle"> About us</a>
+            <a href="/blog/en" class="fa fa-newspaper-o"> Blog</a>
+            <a href="/products/en" class="fa fa-code"> Products</a>
+            <a href="/contact/en" id="m-active-page" class="fa fa-envelope"> Contact</a>
+        </div>
+        <nav class="mon" id="mon">
+            <button class="fa fa-bars" id="ham" onclick="mobileNav('en')"></button>
+            <h2><a id="logo" href="/en/" class="m-logo">Avazeh</a> </h2>
+
+
+            <div class="m-lang"><a href="/contact">فا</a></div>
+        </nav>
+        <div class="els" onclick="closeNav()">
+            <nav class="mof">
+                <h2><a href="/" class="logo">Avazeh</a> </h2>
+
+                <div class="navbar">
+                    <div class="links">
+                        <a href="/en/">Home</a>
+                        <a href="/about/en">About us</a>
+                        <a href="/blog/en/">Blog</a>
+                        <a href="/products/en/">Products</a>
+                        <a href="/contact/en/" id="active-page">Contact</a>
+                        <div class="lang"><a href="/contact">فا</a></div>
+                    </div>
+
+                </div>
+            </nav>
+
+        <form action="#" class="contact-form">
+            <h1>Contact Us</h1>
+            <div class="form-sec">
+                <label for="name">Full name :</label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-sec">
+                <label for="email">Email :</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-sec">
+                <label for="phone">Phone</label>
+                <input type="number" name="phone">
+            </div>
+            <div class="form-sec">
+                <label for="desc">Description :</label>
+                <textarea name="desc" cols="30" rows="11"></textarea> </div>
+        <button type="submit" class="btn-moreb" style="font-size: 20px;width: 180px; margin: 16px 0;">Send message!</button>
+
+        </form>
+{% endblock %}

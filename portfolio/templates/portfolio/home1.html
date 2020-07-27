@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "portfolio/main.css" %}">
+    <link rel="shortcut icon" href="{% static "portfolio/favicon-32x32.png" %}" type="image/png">
+    <title>mojtaba madadi</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="navi" href="/">Home</a>
+        <a class="navi" href="/blog/">Blog</a>
+        <a class="navi" href="#">Contact</a>
+    </div>
+    <div class="controll">
+        <div class="page" id="page1">
+
+            <div class="header">
+                <div class="avatar">
+                    <img width="44px" src="{% static "portfolio/logo.png" %}" alt="logo">
+                    <p>Mojtaba Madadi</p>
+                </div>
+                <div class="lang">
+                    <div class="activel" id="eng"><a href="#" onclick="langch(0)">eng</a></div>
+                    <div class=" deal" id="fa"><a href="#" onclick="langch(1)">fa</a></div>
+                </div>
+            </div>
+
+
+
+            <div class="sec1">
+                <p>mojtaba madadi is a web developer, <br>
+                    designer and a project manager <br>
+                    -lives in iran</p>
+            </div>
+        </div>
+
+
+        <div class="page">
+            <h2>abilities : </h2>
+
+            <div class="abis">
+                <div class="abistop">
+                    <div class="abi abi1">
+                        <h3>programming languages : </h3>
+
+                        <ul>
+                            <div class="ab">
+                                <li>Python
+                                </li>
+                                <span class="bulb">&#8226;</span><span class="bulb">&#8226;</span><span
+                                    class="bulb">&#8226;</span><span class="bulb">&#8226;</span><span
+                                    class="buld">&#8226;</span>
+                            </div>
+                            <div class="ab">
+                                <li>Javascript</li><span class="bulb">&#8226;</span><span
+                                    class="bulb">&#8226;</span><span class="bulb">&#8226;</span><span
+                                    class="bulb">&#8226;</span><span class="bulb">&#8226;</span>
+                            </div>
+                            <div class="ab">
+                                <li>C# </li>
+                                <span class="bulb">&#8226;</span><span class="bulb">&#8226;</span><span
+                                    class="bulb">&#8226;</span><span class="buld">&#8226;</span><span
+                                    class="buld">&#8226;</span>
+                            </div>
+                            <div class="ab">
+                                <li>Php</li>
+                                <span class="bulb">&#8226;</span><span class="bulb">&#8226;</span><span
+                                    class="bulb">&#8226;</span><span class="buld">&#8226;</span><span
+                                    class="buld">&#8226;</span>
+                            </div>
+
+
+                        </ul>
+                    </div>
+                    <div class="abi">
+                        <h3>web : </h3>
+
+                        <ul>
+                            <li>- Html, css (bootsrap, sass)</li>
+                            <li>- JavaScript (node.js, express, react, redux, ejs)</li>
+                            <li>- Django, Laravel, node.js</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="abi">
+                    <h3>design : </h3>
+                    <ul>
+                        <li>- UI & UX</li>
+                        <li>- posters, logo, business cards</li>
+                        <li>- apps and web apps</li>
+                        <li></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <p>animation, game development, android, <b>project management</b>, video & photo editing, etc</p>
+        </div>
+
+        <div class="page3">
+            <h2>some of projects : </h2>
+            <div class="projs">
+                <div class="projcards">
+                    {% for project in projects  %}
+                    <div class="card">
+                        <img src="{{ project.image.url }}" alt="Avatar" style="width:100%">
+                        <div class="con">
+
+                            <h4> {{ project.title }}
+                            </h4>
+                            <p> {{ project.description|striptags|truncatechars:100 }}
+                            </p>
+                            {% if project.link %}
+                            <a href="{{ project.link }}" target="_blank">Link</a>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <a href="#ch">see all (12)</a>
+            </div>
+
+        </div>
+
+
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footerinfo">
+                <p>Email : mojyseo@gmail.com</p>
+                <p>phone : +98911791xxxx</p>
+            </div>
+
+            <a href="#">leave a message...</a>
+        </div>
+
+        <small>all rights reserved by mojtaba madadi</small>
+    </footer>
+
+
+    <script src="{% static "portfolio/main.js" %}"></script>
+</body>
+
+</html>

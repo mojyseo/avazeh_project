@@ -1,0 +1,183 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="m-links" id="links">
+    <a href="/" class="fa fa-home"> صفحه اصلی</a>
+    <a href="/about/" id="m-active-page" class="fa fa-info-circle"> درباره ما </a>
+    <a href="/blog/" class="fa fa-newspaper-o"> بلاگ</a>
+    <a href="/products/" class="fa fa-code"> محصولات</a>
+    <a href="/contact/" class="fa fa-envelope"> تماس با ما</a>
+</div>
+<nav class="mon" id="mon">
+    <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+    <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+    <div class="m-lang"><a href="/about/en/">en</a></div>
+</nav>
+
+<div class="els" onclick="closeNav()">
+    <nav class="mof">
+        <div class="navbar">
+            <h2><a href="/" class="logo">آوازه</a> </h2>
+            <div class="links">
+                <a href="/">صفحه اصلی</a>
+                <a href="/about/" id="m-active-page">درباره ما</a>
+                <a href="/blog/">بلاگ</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/">تماس با ما</a>
+            </div>
+        </div>
+        <div class="lang"><a href="/about/en/">en</a></div>
+    </nav>
+
+    <div class="desc-sec">
+        <div class="desc">
+            <h2>گروه آوازه آماده خدمت رسانی</h2>
+            <p>گروه آوازه متشکل از مهندسان, برنامه نویسان و طراحان جوان ایرانی از سال 1397 آماده به خدمت رسانی
+                به
+                شرکت
+                ها, فروشگاه ها, کسب و کار ها و افراد در حوزه وب و نرم افزار در سطح جهانی می باشد . </p>
+
+
+            <p>آوازه با تسلط بر بسیاری از تکنولوژی های روز دنیا در زمینه دیجیتال, به دنبال کسب رضایت شما عزیزان
+                با
+                رعایت
+                اصولی ترین روش ها با در نظر گرفتن سلیقه مشتریان عزیز است .
+            </p>
+        </div>
+        <div class="desc">
+
+            <h2> چرا آوازه ؟
+            </h2>
+            <p>- تضمین کیفیت پروژه و ارائه مهلت ۴۸ ساعته برای بررسی صحت پروژه تحویلی به مشتری
+
+            </p>
+            <p>- سفارش پروژه و پیگیری وضعیت بصورت غیر حضوری و حضوری
+            </p>
+            <p> - بهره‌گیری از تیمی متخصص و فعال
+            </p>
+        </div>
+
+
+    </div>
+    <div class="services">
+        <h2>لیست کامل خدمات آوازه :</h2>
+
+        <div class="servs">
+            <div class="serv">
+                <p>سمت وب (backend) : </p>
+                <ul>
+                    <div class="serv-item">
+                        <li>Django (Python) </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Flask (Python) </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Node.js </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Express.js </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Laravel (PHP)</li>
+                    </div>
+
+                </ul>
+            </div>
+            <div class="serv">
+                <p>سمت کاربر (frontend) : </p>
+                <ul>
+                    <div class="serv-item">
+                        <li>Html, Css, JavaScript</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>React.js </li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>Angular.js</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>Redux.js</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>Ejs</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>Scss</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Pub Html</li>
+                    </div>
+                </ul>
+            </div>
+            <div class="serv">
+                <p>طراحی : </p>
+                <ul>
+                    <div class="serv-item">
+                        <li>طراحی UI/UX وبسایت و وب اپلیکیشن </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>طراحی UI/UX اپلیکیشن های موبایل و ویندوز</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>طراحی قالب پست </li>
+                    </div>
+                    <div class="serv-item">
+                        <li>طراحی کارت ویزیت</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>موشن گرافیک و انیمیشن</li>
+
+                    </div>
+
+                </ul>
+            </div>
+            <div class="serv">
+                <p>دیگر : </p>
+                <ul>
+                    <div class="serv-item">
+                        <li>بهبود SEO سایت</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>مدیریت داده و دیتابیس</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>مدیریت پروژه</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>مدیریت و بهبود وضعیت رسانه ها در شبکه های اجتماعی</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>اپلیکیشن اندروید</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Unity engine</li>
+                    </div>
+                    <div class="serv-item">
+                        <li>Unreal engine</li>
+
+                    </div>
+                    <div class="serv-item">
+                        <li>طراحی سه بعدی (Blender)</li>
+
+                    </div>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <a href="/contact/" class="fa fa-envelope btn-contact"> تماس با ما</a>
+
+    {% endblock %}

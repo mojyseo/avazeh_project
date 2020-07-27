@@ -1,0 +1,36 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="m-links" id="links">
+    <a href="/" class="fa fa-home"> صفحه اصلی</a>
+    <a href="/about/" class="fa fa-info-circle"> درباره ما </a>
+    <a href="/blog/" class="fa fa-newspaper-o"> بلاگ</a>
+    <a href="/products/" class="fa fa-code"> محصولات</a>
+    <a href="/contact/" id="m-active-page" class="fa fa-envelope"> تماس با ما</a>
+</div>
+<nav class="mon" id="mon">
+    <button class="fa fa-bars" id="ham" onclick="mobileNav('fa')"></button>
+    <h2><a id="logo" href="/" class="m-logo">آوازه</a> </h2>
+
+
+    <div class="m-lang"><a href="/contact/en/">en</a></div>
+</nav>
+
+<div class="els" onclick="closeNav()">
+    <nav class="mof">
+        <div class="navbar">
+            <h2><a href="/" class="logo">آوازه</a> </h2>
+            <div class="links">
+                <a href="/">صفحه اصلی</a>
+                <a href="/about/">درباره ما</a>
+                <a href="/blog/">بلاگ</a>
+                <a href="/products/">محصولات</a>
+                <a href="/contact/" id="m-active-page">تماس با ما</a>
+            </div>
+        </div>
+        <div class="lang"><a href="/contact/en/">en</a></div>
+    </nav>
+sent
+    {% endblock %}
