@@ -1,0 +1,1 @@
+web: gunicorn avazeh.wsgi --log-file -
