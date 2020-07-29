@@ -88,25 +88,25 @@ WSGI_APPLICATION = 'avazeh.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-DATABASE = {
+DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        "CLIENT": {
-           "name": 'avazeh',
-           "host": 'mongodb+srv://mojy:txTyGHeViWefjPQg@cluster0.gc8ad.mongodb.net/avazeh?retryWrites=true&w=majority',
-           "username": 'mojy',
-           "password": 'txTyGHeViWefjPQg',
-           "authMechanism": "SCRAM-SHA-1",
-        }, 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASE = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         "CLIENT": {
+#            "name": 'avazeh',
+#            "host": 'mongodb+srv://mojy:txTyGHeViWefjPQg@cluster0.gc8ad.mongodb.net/avazeh?retryWrites=true&w=majority',
+#            "username": 'mojy',
+#            "password": 'txTyGHeViWefjPQg',
+#            "authMechanism": "SCRAM-SHA-1",
+#         }, 
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -116,10 +116,10 @@ DATABASE = {
 # }
 
 
-# import dj_database_url
+import dj_database_url
 
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
