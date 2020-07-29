@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+# from django_mongoengine import mongo_admin
 from portfolio import views as portfolio_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('mongoadmin/', mongo_admin.site.urls),
     path('', portfolio_views.home, name='home'),
     path('en/', portfolio_views.home_en, name='home-en'),
     path('about/', portfolio_views.about, name='about'),

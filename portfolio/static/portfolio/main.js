@@ -59,11 +59,11 @@ function showPage() {
 
 // navbar end
 
-// function theme() {
-//   document.getElementById("cssfile").href = `{% static "portfolio/dark.css" %}`;
-//   console.log("working");
-//   return false
-// }
+function theme() {
+  document.getElementById("cssfile").href = `{% static "portfolio/dark.css" %}`;
+  console.log("working");
+  return false;
+}
 
 showSlides();
 

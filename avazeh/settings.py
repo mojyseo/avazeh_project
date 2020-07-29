@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import django_heroku
 
+
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8p^6t$+$a9$&v@audcnfrk1z-f0wb40l9mb6_1uyq-tf25a4*k'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django_rest_framework',
+    # 'django_rest_framework_mongoengine',
+    # 'django_mongoengine',
+    # 'django_mongoengine.mongo_auth',
+    # 'django_mongoengine.mongo_admin',
     'blog',
     'portfolio',
 ]
@@ -78,6 +87,7 @@ WSGI_APPLICATION = 'avazeh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,9 +95,15 @@ WSGI_APPLICATION = 'avazeh.wsgi.application'
 #     }
 # }
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=2000)
-DATABASES['default'].update(db_from_env)
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'avazeh',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
