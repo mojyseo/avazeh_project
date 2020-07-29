@@ -2,22 +2,12 @@
   --main: #6891ff;
   --main-deactive: #92acf1be;
   --main-hover: #364b80;
-  --light-gray: #e7e7e7;
-  --white: #fcfcfc;
-  --font: #707070;
-  --font-darker: #313131;
-  --black: #101010;
-}
-/* :root {
-  --main: #6891ff;
-  --main-deactive: #92acf1be;
-  --main-hover: #364b80;
   --light-gray: #2b2b2b;
   --white: #1b1b1b;
   --font: #fcfcfc;
   --font-darker: #afafaf;
   --black: #fcfcfc;
-} */
+}
 
 * {
   margin: 0;
