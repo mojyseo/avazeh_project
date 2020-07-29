@@ -88,21 +88,27 @@ WSGI_APPLICATION = 'avazeh.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'djongo',
+#         'NAME': 'avazeh',
 #     }
 # }
 
 
+import dj_database_url
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'avazeh',
-    }
-}
+db_from_env = dj_database_url.config(conn_max_age=2000)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
