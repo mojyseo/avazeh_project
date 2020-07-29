@@ -95,7 +95,18 @@ DATABASES = {
     }
 }
 
-
+DATABASE = {
+    'default': {
+        'ENGINE': 'djongo',
+        "CLIENT": {
+           "name": 'avazeh',
+           "host": 'mongodb+srv://mojy:txTyGHeViWefjPQg@cluster0.gc8ad.mongodb.net/avazeh?retryWrites=true&w=majority',
+           "username": 'mojy',
+           "password": 'txTyGHeViWefjPQg',
+           "authMechanism": "SCRAM-SHA-1",
+        }, 
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -105,10 +116,10 @@ DATABASES = {
 # }
 
 
-import dj_database_url
+# import dj_database_url
 
-db_from_env = dj_database_url.config(conn_max_age=2000)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
